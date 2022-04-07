@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
+#  push:
+#    branches: [ main ]
 #  pull_request:
 #    branches: [ main ]
 
@@ -41,9 +41,8 @@ jobs:
       - name: Run Doxygen
         run: doxygen ./Doxyfile
         
-#      - name: Disable Jekyll processing
-#        run: touch .nojekyll
-#        # mkdir docs/_site && touch docs/_site/.nojekyll
+      - name: Re-create docs/
+        run: rm -rf docs/ && mkdir docs/ && touch docs/.nojekyll
         
       - name: Move Doxygen output to docs/
         run: mv documentation/html/* docs/
