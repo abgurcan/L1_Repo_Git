@@ -42,4 +42,4 @@ jobs:
         run: doxygen ./Doxyfile
         
       - name: Move Doxygen output
-        run: mv ./documentation/html/* docs/
+        run: mkdrir ./docs && mv ./documentation/html/* docs/
