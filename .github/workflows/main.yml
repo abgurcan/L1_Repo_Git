@@ -45,5 +45,8 @@ jobs:
 #        run: touch .nojekyll
 #        # mkdir docs/_site && touch docs/_site/.nojekyll
         
-      - name: Move Doxygen output
+      - name: Move Doxygen output to docs/
         run: mv documentation/html/* docs/
+        
+      - name: Commit and push docs/
+        run: git add docs/* && git commit -m "Auto-generated Doxygen documentation" && git push
