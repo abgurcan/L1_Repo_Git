@@ -49,4 +49,7 @@ jobs:
         run: mv documentation/html/* docs/
         
       - name: Commit and push docs/
-        run: git add docs/* && git commit -m "Auto-generated Doxygen documentation" && git push
+        run: |
+          git config --global user.email "git@robot"
+          git config --global user.name "Git Robot"
+          git add docs/* && git commit -m "Auto-generated Doxygen documentation" && git push
