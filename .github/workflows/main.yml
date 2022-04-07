@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
           
       - name: Get Doxygen
-        run: 'which doxygen || (apt-get doxygen)'
+        run: apt-get doxygen
         
       - name: Run Doxygen
         run: doxygen ./Doxyfile
