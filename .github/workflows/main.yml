@@ -43,3 +43,6 @@ jobs:
         
       - name: Move Doxygen output
         run: mkdir ./docs && mv ./documentation/html/* docs/
+        
+      - name: Disable Jekyll processing
+        run: touch ./docs/.nojekyll
